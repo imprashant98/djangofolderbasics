@@ -1,6 +1,3 @@
-Understood! Here's a brief and concise version of the README file without including code snippets:
-
----
 
 # Django Project with Nested Folder Structure
 
@@ -31,5 +28,3 @@ Understood! Here's a brief and concise version of the README file without includ
 
 1. **Add Folders:** Use the admin interface to create folders and define parent-child relationships.
 2. **View Parent and Child Folders:** Use the admin interface to view folder names and their parents.
-
----
