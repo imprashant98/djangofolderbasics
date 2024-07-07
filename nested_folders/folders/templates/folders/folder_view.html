@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Folders</title>
+    <style>
+      .folders-container {
+        display: flex;
+        justify-content: space-between; /* Adjust as needed */
+      }
+      .folders-list {
+        flex: 1;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+      }
+      .folder-item {
+        margin-bottom: 10px;
+      }
+      .folder-item h2 {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Folders</h1>
+    <div class="folders-container">
+      <ul class="folders-list">
+        {% for folder in folders %}
+        <li class="folder-item">
+          <h2>{{ folder.name }}</h2>
+          {% if folder.parent %}
+          <p>Parent: {{ folder.parent.name }}</p>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      <ul class="folders-list">
+        {% for folder in folders %}
+        <li class="folder-item">
+          {% if folder.get_children %}
+          <h3>Children:</h3>
+          <ul>
+            {% for child in folder.get_children %}
+            <li>{{ child.name }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
